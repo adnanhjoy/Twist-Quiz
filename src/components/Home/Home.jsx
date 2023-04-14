@@ -1,10 +1,19 @@
 import React from 'react';
+import { useLoaderData } from 'react-router-dom';
+import Quiz from '../Quiz/Quiz';
+import { Row } from 'react-bootstrap';
 
 const Home = () => {
+    const quizes = useLoaderData().data;
     return (
-        <div>
-            <h1>Home</h1>
-        </div>
+        <Row xs={1} md={4}>
+            {
+                quizes.map(quiz => <Quiz
+                    key={quiz.id}
+                    quiz={quiz}
+                ></Quiz>)
+            }
+        </Row>
     );
 };
 
