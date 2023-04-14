@@ -12,6 +12,7 @@ const Questions = () => {
     const [answer, setAnswer] = useState([]);
     const [falseans, setFalseans] = useState([]);
     const [show, setShow] = useState(false);
+    const [click, setClick] = useState(false)
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
@@ -39,7 +40,7 @@ const Questions = () => {
                     options.map(option =>
                         <Col>
                             <div onClick={() => correctAns(option)} className='question d-flex align-items-center'>
-                                <input type="radio" name="" className='me-2' />
+                                <input type="radio" name="answer" className='me-2' onClick={() => correctAns(option)} />
                                 <label>{option}</label>
                                 <ToastContainer />
                             </div>
@@ -54,7 +55,7 @@ const Questions = () => {
                     <Modal.Title>Correct Answer</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>{correctAnswer}</Modal.Body>
-                
+
             </Modal>
         </div>
     );

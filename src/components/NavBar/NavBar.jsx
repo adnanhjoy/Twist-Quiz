@@ -10,9 +10,7 @@ const NavBar = () => {
         <Navbar bg="light" expand="lg">
             <Container>
                 <LinkContainer to="/">
-                    <Navbar.Brand>
-                        <img className='h-25 w-25' src={logo} alt="" />
-                    </Navbar.Brand>
+                    <Navbar.Brand><h1>TwistQuiz</h1></Navbar.Brand>
                 </LinkContainer>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">

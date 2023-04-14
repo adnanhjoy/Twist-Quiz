@@ -1,6 +1,7 @@
 import React, { createContext } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import Questions from '../Questions/Questions';
+import { Container } from 'react-bootstrap';
 
 export const QuizContext = createContext();
 
@@ -9,18 +10,20 @@ const ReactQuiz = () => {
 
     const { total, name, questions } = allQuizes;
     return (
-        
-            <div className='w-50 m-auto'>
-                <h1>Please Start Your {name} Quiz</h1>
+
+        <Container>
+            <div>
+                <h1 className='my-5 text-center'>Please Start Your {name} Quiz</h1>
                 {
-                    questions.map(question => 
+                    questions.map(question =>
                         <QuizContext.Provider key={question.id} value={question}>
                             <Questions></Questions>
                         </QuizContext.Provider>
-                        )
+                    )
                 }
             </div>
-        
+        </Container>
+
     );
 };
 
