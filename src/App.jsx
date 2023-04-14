@@ -29,7 +29,7 @@ function App() {
           element: <About></About>
         },
         {
-          path: '/:id',
+          path: 'quiz/:id',
           element: <ReactQuiz></ReactQuiz>,
           loader: async ({params}) => fetch(`https://openapi.programming-hero.com/api/quiz/${params.id}`)
         }

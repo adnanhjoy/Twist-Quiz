@@ -15,7 +15,7 @@ const Quiz = ({ quiz }) => {
                 <Card.Body className='d-flex justify-content-between'>
                     <Card.Title>{name}</Card.Title>
                     <Card.Text>
-                        <LinkContainer to={`${id}`}>
+                        <LinkContainer to={`quiz/${id}`}>
                             <Button className='d-flex align-items-center justify-content-between'>
                                 <p className='m-0 me-1'>Start Quiz</p>
                                 <ArrowRightIcon className='arrow-icon'></ArrowRightIcon>

@@ -39,12 +39,16 @@ const Questions = () => {
                 {
                     options.map(option =>
                         <Col>
-                            <div onClick={() => correctAns(option)} className='question d-flex align-items-center'>
-                                <input type="radio" name="answer" className='me-2' onClick={() => correctAns(option)} />
-                                <label>{option}</label>
-                                <ToastContainer />
+                            <div className='question'>
+                                <label className='d-flex align-items-center'>
+                                    <input type="radio" name="answer" className='me-2' onClick={() => correctAns(option)} />
+                                    {option}
+                                </label>
+                                
                             </div>
+                            <ToastContainer />
                         </Col>
+
                     )
                 }
             </Row>
