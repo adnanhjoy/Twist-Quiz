@@ -9,23 +9,19 @@ import { EyeIcon } from '@heroicons/react/24/solid'
 import Modal from 'react-bootstrap/Modal';
 
 const Questions = () => {
-    const [answer, setAnswer] = useState([]);
-    const [falseans, setFalseans] = useState([]);
     const [show, setShow] = useState(false);
-    const [click, setClick] = useState(false)
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
     const questiones = useContext(QuizContext)
-    const { options, question, correctAnswer } = questiones;
+    const { id, options, question, correctAnswer } = questiones;
+
     const correctAns = (option) => {
         if (option === correctAnswer) {
             toast('Correct Answer')
-            setAnswer([...answer, correctAnswer])
         } else {
             toast('Wrong Answer')
-            setFalseans([...falseans, option])
         }
     }
 
@@ -41,12 +37,12 @@ const Questions = () => {
                         <Col>
                             <div className='question'>
                                 <label className='d-flex align-items-center'>
-                                    <input type="radio" name="answer" className='me-2' onClick={() => correctAns(option)} />
+                                    <input type="radio" name={id} className='me-2' onClick={() => correctAns(option)} />
                                     {option}
                                 </label>
-                                
+
                             </div>
-                            <ToastContainer />
+
                         </Col>
 
                     )
@@ -61,6 +57,7 @@ const Questions = () => {
                 <Modal.Body>{correctAnswer}</Modal.Body>
 
             </Modal>
+            <ToastContainer />
         </div>
     );
 };
