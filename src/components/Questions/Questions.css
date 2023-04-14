@@ -14,3 +14,9 @@
 .question:hover{
     background-color: #dfc6f7;
 }
+.see-correct{
+    cursor: pointer;
+}
+.see-correct:hover{
+    color: blueviolet;
+}
