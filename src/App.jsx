@@ -5,6 +5,7 @@ import Home from './components/Home/Home'
 import Statistic from './components/Statistic/Statistic'
 import About from './components/About/About'
 import ReactQuiz from './components/ReactQuiz/ReactQuiz'
+import ErrorPage from './components/ErrorPage/ErrorPage'
 
 function App() {
 
@@ -32,6 +33,10 @@ function App() {
           loader: async ({params}) => fetch(`https://openapi.programming-hero.com/api/quiz/${params.id}`)
         }
       ]
+    },
+    {
+      path: '*',
+      element: <ErrorPage></ErrorPage>
     }
   ])
 
